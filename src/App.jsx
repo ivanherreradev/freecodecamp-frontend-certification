@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <>
-      <QuoteBox quote={quote} />
+      <QuoteBox quote={quote} handleNewQuote={handleNewQuote} />
     </>
   )
 }
