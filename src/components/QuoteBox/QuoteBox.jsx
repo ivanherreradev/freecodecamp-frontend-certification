@@ -5,6 +5,7 @@ import { copyToClipboard } from '../../utils/helpers/copyToClipboard'
 import { speechQuote } from '../../utils/helpers/speechQuote'
 import styles from './QuoteBox.module.css'
 import { generateTweetUrl } from '../../utils/helpers/generateTweetUrl'
+import QuoteText from './components/QuoteText/QuoteText'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -13,7 +14,7 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
         <h1>Quote of the Day</h1>
 
         <section className={styles.quote}>
-          <p id="text">{quote.text}</p>
+          <QuoteText text={quote.text}/>
           <p id="author">{quote.author}</p>
         </section>
 
