@@ -1,11 +1,12 @@
 import React from 'react'
 import NewQuote from '../NewQuote/NewQuote'
 import Button from '../Button/Button'
+import QuoteText from './components/QuoteText/QuoteText'
+import QuoteAuthor from './components/QuoteAuthor/QuoteAuthor'
 import { copyToClipboard } from '../../utils/helpers/copyToClipboard'
 import { speechQuote } from '../../utils/helpers/speechQuote'
-import styles from './QuoteBox.module.css'
 import { generateTweetUrl } from '../../utils/helpers/generateTweetUrl'
-import QuoteText from './components/QuoteText/QuoteText'
+import styles from './QuoteBox.module.css'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -14,8 +15,8 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
         <h1>Quote of the Day</h1>
 
         <section className={styles.quote}>
-          <QuoteText text={quote.text}/>
-          <p id="author">{quote.author}</p>
+          <QuoteText text={quote.text} />
+          <QuoteAuthor author={quote.author} />
         </section>
 
         <footer className={styles.features}>
