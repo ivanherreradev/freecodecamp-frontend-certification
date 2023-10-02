@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './QuoteBox.module.css'
 import NewQuote from '../NewQuote/NewQuote'
+import Button from '../Button/Button'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -15,21 +16,32 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
 
         <footer className={styles.features}>
           <ul>
-            <li>Speak</li>
-            <li>Copy</li>
             <li>
-              <a
-                id="tweet-quote"
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                  `"${quote.text}" - ${quote.author}`
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button>
+                <i className="bx bxs-volume-full bx-sm" />
+              </Button>
+            </li>
+            <li>
+              <Button>
+                <i className="bx bxs-copy bx-sm" />
+              </Button>
+            </li>
+            <li>
+              <Button
+                linkProps={{
+                  id: 'tweet-quote',
+                  href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    `"${quote.text}" - ${quote.author}`
+                  )}`,
+                  target: '_blank',
+                  rel: 'noopener noreferrer'
+                }}
               >
-                Twitter
-              </a>
+                <i className="bx bxl-twitter bx-sm" />
+              </Button>
             </li>
           </ul>
+
           <NewQuote handleNewQuote={handleNewQuote} />
         </footer>
       </header>
