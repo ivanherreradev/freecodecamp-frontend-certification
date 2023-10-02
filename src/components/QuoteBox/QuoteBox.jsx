@@ -12,12 +12,20 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
           <p id="author">{quote.author}</p>
         </section>
 
-        <button
-          id="new-quote"
-          onClick={handleNewQuote}
-        >
+        <button id="new-quote" onClick={handleNewQuote}>
           New Quote
         </button>
+
+        <a
+          id="tweet-quote"
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            `"${quote.text}" - ${quote.author}`
+          )}`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Twitter
+        </a>
       </header>
     </main>
   )
