@@ -21,3 +21,16 @@
   height: auto;
   padding: 10px 30px;
 }
+
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.features ul {
+  display: flex;
+  gap: 5px;
+}

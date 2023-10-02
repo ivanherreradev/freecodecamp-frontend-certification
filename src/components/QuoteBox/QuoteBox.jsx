@@ -13,18 +13,25 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
           <p id="author">{quote.author}</p>
         </section>
 
-        <NewQuote handleNewQuote={handleNewQuote} />
-
-        <a
-          id="tweet-quote"
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-            `"${quote.text}" - ${quote.author}`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
+        <footer className={styles.features}>
+          <ul>
+            <li>Speak</li>
+            <li>Copy</li>
+            <li>
+              <a
+                id="tweet-quote"
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  `"${quote.text}" - ${quote.author}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </li>
+          </ul>
+          <NewQuote handleNewQuote={handleNewQuote} />
+        </footer>
       </header>
     </main>
   )
