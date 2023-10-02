@@ -1,8 +1,9 @@
 import React from 'react'
-import styles from './QuoteBox.module.css'
 import NewQuote from '../NewQuote/NewQuote'
 import Button from '../Button/Button'
 import { copyToClipboard } from '../../utils/helpers/copyToClipboard'
+import { speechQuote } from '../../utils/helpers/speechQuote'
+import styles from './QuoteBox.module.css'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -18,7 +19,7 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
         <footer className={styles.features}>
           <ul>
             <li>
-              <Button>
+              <Button onClick={() => speechQuote(quote.text, quote.author)}>
                 <i className="bx bxs-volume-full bx-sm" />
               </Button>
             </li>
