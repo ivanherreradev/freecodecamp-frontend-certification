@@ -1,0 +1,12 @@
+.newQuoteButton {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 13px 22px;
+  border-radius: 30px;
+  background: #793fdf;
+}
+
+.newQuoteButton:hover {
+  background: #6d2dde;
+}
