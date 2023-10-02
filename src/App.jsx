@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
+import QuoteBox from './components/QuoteBox/QuoteBox'
 
 const App = () => {
   const [quote, setQuote] = useState({ text: '', author: '' })
@@ -11,11 +12,9 @@ const App = () => {
   }, [])
 
   return (
-    <div>
-      <h1>Quote of the Day</h1>
-      <p id="text">{quote.text}</p>
-      <p id="author">{quote.author}</p>
-    </div>
+    <>
+      <QuoteBox quote={quote} />
+    </>
   )
 }
 
