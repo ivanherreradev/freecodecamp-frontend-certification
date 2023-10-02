@@ -1,0 +1,30 @@
+.Button {
+  margin: 0 5px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #793fdf;
+  transition: all 0.3s ease;
+}
+
+.Button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button i {
+  color: #793fdf;
+}
+
+.Button:hover {
+  background: #793fdf;
+}
+
+.Button:hover i {
+  color: #fff;
+}
