@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './QuoteBox.module.css'
+import NewQuote from '../NewQuote/NewQuote'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -12,17 +13,15 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
           <p id="author">{quote.author}</p>
         </section>
 
-        <button id="new-quote" onClick={handleNewQuote}>
-          New Quote
-        </button>
+        <NewQuote handleNewQuote={handleNewQuote} />
 
         <a
           id="tweet-quote"
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `"${quote.text}" - ${quote.author}`
           )}`}
-          target='_blank'
-          rel='noopener noreferrer'
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Twitter
         </a>
