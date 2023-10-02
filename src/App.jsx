@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
+import React from 'react'
 import QuoteBox from './components/QuoteBox/QuoteBox'
-import { fetchRandomQuote } from './services/quoteServices'
+import { useQuote } from './utils/hooks/useQuote'
+import './App.css'
 
 const App = () => {
-  const [quote, setQuote] = useState({ text: '', author: '' })
-
-  const handleNewQuote = async () => {
-    try {
-      const { text, author } = await fetchRandomQuote()
-      setQuote({ text, author })
-    } catch (error) {
-      console.error('Error fetching quote:', error)
-    }
-  }
-
-  useEffect(() => {
-    handleNewQuote()
-  }, [])
+  const { quote, handleNewQuote } = useQuote()
 
   return (
     <>
