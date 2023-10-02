@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import { copyToClipboard } from '../../utils/helpers/copyToClipboard'
 import { speechQuote } from '../../utils/helpers/speechQuote'
 import styles from './QuoteBox.module.css'
+import { generateTweetUrl } from '../../utils/helpers/generateTweetUrl'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -32,9 +33,7 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
               <Button
                 linkProps={{
                   id: 'tweet-quote',
-                  href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                    `"${quote.text}" - ${quote.author}`
-                  )}`,
+                  href: generateTweetUrl(quote.text, quote.author),
                   target: '_blank',
                   rel: 'noopener noreferrer'
                 }}
