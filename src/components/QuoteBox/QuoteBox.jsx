@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './QuoteBox.module.css'
 import NewQuote from '../NewQuote/NewQuote'
 import Button from '../Button/Button'
+import { copyToClipboard } from '../../utils/helpers/copyToClipboard'
 
 const QuoteBox = ({ quote, handleNewQuote }) => {
   return (
@@ -22,7 +23,7 @@ const QuoteBox = ({ quote, handleNewQuote }) => {
               </Button>
             </li>
             <li>
-              <Button>
+              <Button onClick={copyToClipboard(quote.text, quote.author)}>
                 <i className="bx bxs-copy bx-sm" />
               </Button>
             </li>
